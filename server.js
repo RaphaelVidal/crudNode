@@ -1,12 +1,15 @@
+
 const importarModulosDoExpress = require("express"); // importa o exepress
 const meuServidorExpress = importarModulosDoExpress(); // cria um servidor para minha aplicação
 
+
+
 // rotas
-meuServidorExpress.get("/",function(req,res){
-    res.send("Pagina inicial");
-});
+const minhasRotas = require('./rotas');// importa função rotas
+minhasRotas.IniciaRotasExistentes(meuServidorExpress); //importa função rotas
+
 
 
 meuServidorExpress.listen(8089,function(){
-    console.log("servidor iniciado com sucesso e escutando na porta 8089")
+    console.log("Servidor Iniciado com sucesso e escutando no endereco http://localhost:8089")
 }); // inicia o servidor
